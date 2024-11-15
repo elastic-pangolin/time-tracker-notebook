@@ -1,0 +1,20 @@
+
+[project]
+name = "time-tracker-notebook"
+version = "1.0"
+description = "a notebook to display the data from time-tracker logs"
+authors = [
+    {name = "elastic-pangolin"},
+]
+dependencies = [
+    "ipykernel>=6.25.2",
+    "kaleido",
+    "pandas>=2.1.1",
+    "plotly",
+    "nbformat>=5.9.2",
+    "loguru",
+    "matplotlib",
+    "seaborn"
+]
+requires-python = ">=3.10"
+license = {text = "MIT"}
