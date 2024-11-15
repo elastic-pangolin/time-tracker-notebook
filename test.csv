@@ -1,0 +1,11 @@
+Project,Start Time,End Time,Description,ID,Duration (Readable),Duration (Seconds),Billed
+LUNCH,Wed Oct 30 2024 12:01:02 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:50:03 GMT+0100 (Central European Standard Time),,1730296622670,02:49:01,10141,false
+local admin,Wed Oct 30 2024 14:57:02 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:57:04 GMT+0100 (Central European Standard Time),configure time tracker,1730296622680,00:00:02,2,false
+pentest,Wed Oct 30 2024 14:57:24 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:59:02 GMT+0100 (Central European Standard Time),login,1730296644619,00:01:38,98,false
+BREAKS,Wed Oct 30 2024 14:59:15 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:00:38 GMT+0100 (Central European Standard Time),,1730296755586,00:01:23,83,false
+pentest,Wed Oct 30 2024 15:00:50 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:08:05 GMT+0100 (Central European Standard Time),login,1730296850707,00:07:15,435,false
+local admin,Wed Oct 30 2024 15:08:16 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:09:10 GMT+0100 (Central European Standard Time),configure time tracker,1730297296656,00:00:54,54,false
+pentest,Wed Oct 30 2024 15:09:19 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:43:11 GMT+0100 (Central European Standard Time),login,1730297359881,00:33:52,2032,false
+emails/chat,Wed Oct 30 2024 15:43:33 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:47:04 GMT+0100 (Central European Standard Time),,1730299413744,00:03:31,211,false
+support,Wed Oct 30 2024 15:47:56 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:49:01 GMT+0100 (Central European Standard Time),onbaording,1730299676157,00:01:05,65,false
+emails/chat,Wed Oct 30 2024 15:49:14 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 15:50:56 GMT+0100 (Central European Standard Time),,1730299754524,00:01:42,102,false
