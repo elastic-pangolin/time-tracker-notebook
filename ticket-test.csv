@@ -1,0 +1,26 @@
+Project,Start Time,End Time,Description,ID,Duration (Readable),Duration (Seconds),Billed
+work,Thu Jan 30 2025 09:00:27 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 09:58:42 GMT+0100 (Central European Standard Time),,1738224027694,00:58:15,3495,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 09:59:15 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 10:11:10 GMT+0100 (Central European Standard Time),,1738227555624,00:11:55,715,false
+ABC-5672 (trainings),Thu Jan 30 2025 10:28:26 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 10:35:53 GMT+0100 (Central European Standard Time),,1738229306358,00:07:27,447,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 10:42:22 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 10:49:16 GMT+0100 (Central European Standard Time),,1738230142581,00:06:54,414,false
+other tickets,Thu Jan 30 2025 10:49:36 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 10:53:42 GMT+0100 (Central European Standard Time),ABC-5640,1738230576473,00:04:06,246,false
+ABC-5672 (trainings),Thu Jan 30 2025 10:54:10 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 11:03:36 GMT+0100 (Central European Standard Time),,1738230850216,00:09:26,566,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 11:03:38 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 11:07:50 GMT+0100 (Central European Standard Time),,1738231418853,00:04:12,252,false
+LUNCH,Thu Jan 30 2025 11:38:03 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 12:10:18 GMT+0100 (Central European Standard Time),,1738233483054,00:32:15,1935,false
+other tickets,Thu Jan 30 2025 12:32:26 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 12:39:56 GMT+0100 (Central European Standard Time),ABC-5670,1738236746759,00:07:30,450,false
+other tickets,Thu Jan 30 2025 12:41:20 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 12:42:55 GMT+0100 (Central European Standard Time),ABC-5640,1738237280056,00:01:35,95,false
+other tickets,Thu Jan 30 2025 12:43:01 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 12:58:44 GMT+0100 (Central European Standard Time),ABC-5670,1738237381801,00:15:43,943,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 12:58:51 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 14:34:37 GMT+0100 (Central European Standard Time),,1738238331067,01:35:46,5746,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 14:38:27 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 14:39:17 GMT+0100 (Central European Standard Time),,1738244307479,00:00:50,50,false
+(no project),Thu Jan 30 2025 14:39:28 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 14:43:26 GMT+0100 (Central European Standard Time),supervisory board report,1738244368931,00:03:58,238,false
+ABC-5671 (ssdlc slides),Thu Jan 30 2025 14:43:34 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 14:57:34 GMT+0100 (Central European Standard Time),,1738244614313,00:14:00,840,false
+other tickets,Thu Jan 30 2025 14:57:44 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 14:59:43 GMT+0100 (Central European Standard Time),ABC-5670,1738245464621,00:01:59,119,false
+project meeting,Thu Jan 30 2025 15:00:40 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 15:15:00 GMT+0100 (Central European Standard Time),INFOSEC-4795,1738245640433,00:14:20,860,false
+other tickets,Thu Jan 30 2025 15:15:16 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 15:33:07 GMT+0100 (Central European Standard Time),CIAU-6610,1738246516626,00:17:51,1071,false
+other tickets,Thu Jan 30 2025 15:41:52 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 16:00:23 GMT+0100 (Central European Standard Time),ABC-5670,1738248112429,00:18:31,1111,false
+other tickets,Thu Jan 30 2025 16:00:33 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 16:05:40 GMT+0100 (Central European Standard Time),ABC-5664,1738249233681,00:05:07,307,false
+other tickets,Thu Jan 30 2025 16:06:30 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 16:12:09 GMT+0100 (Central European Standard Time),ABC-5664,1738249590641,00:05:39,339,false
+work,Thu Jan 30 2025 16:13:05 GMT+0100 (Central European Standard Time),Thu Jan 30 2025 16:13:33 GMT+0100 (Central European Standard Time),,1738249985005,00:00:28,28,false
+work,Fri Jan 31 2025 09:17:59 GMT+0100 (Central European Standard Time),Fri Jan 31 2025 09:26:30 GMT+0100 (Central European Standard Time),,1738311479228,00:08:31,511,false
+other meeting,Fri Jan 31 2025 09:30:58 GMT+0100 (Central European Standard Time),Fri Jan 31 2025 09:46:57 GMT+0100 (Central European Standard Time),daily,1738312258617,00:15:59,959,false
+other tickets,Fri Jan 31 2025 09:47:18 GMT+0100 (Central European Standard Time),Fri Jan 31 2025 09:56:26 GMT+0100 (Central European Standard Time),ABC-5664,1738313238410,00:09:08,548,false
