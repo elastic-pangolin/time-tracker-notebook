@@ -1,4 +1,4 @@
-Project,Start Time,End Time,Description,ID,Duration (Readable),Duration (Seconds),Billed
+Project,Start Time,End Time,Description,ID,%dr,%ds,Billed
 LUNCH,Wed Oct 30 2024 12:01:02 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:50:03 GMT+0100 (Central European Standard Time),,1730296622670,02:49:01,10141,false
 local admin,Wed Oct 30 2024 14:57:02 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:57:04 GMT+0100 (Central European Standard Time),configure time tracker,1730296622680,00:00:02,2,false
 pentest,Wed Oct 30 2024 14:57:24 GMT+0100 (Central European Standard Time),Wed Oct 30 2024 14:59:02 GMT+0100 (Central European Standard Time),login,1730296644619,00:01:38,98,false
