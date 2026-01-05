@@ -24,7 +24,7 @@ def prep_data(df):
     raw_df = raw_df.dropna(subset=[field_name_start, field_name_end])
     raw_df[field_name_start] = raw_df[field_name_start].str.replace(r' GMT.*', '', regex=True)
     raw_df[field_name_end] = raw_df[field_name_end].str.replace(r' GMT.*', '', regex=True)
-    raw_df['start'] = pd.to_datetime(raw_df[field_name_start]) #, format='%a %b %d %Y %H:%M:%S')
+    raw_df['start'] = pd.to_datetime(raw_df[field_name_start], errors='coerce') #, format='%a %b %d %Y %H:%M:%S')
     raw_df['end'] = pd.to_datetime(raw_df[field_name_end]) #,format='%a %b %d %Y %H:%M:%S')
     raw_df['day'] = raw_df['start'].dt.strftime('%b %d')
     
@@ -36,11 +36,11 @@ def time_mask(full_df, BEFORE:str = None, AFTER:str = None):
     if BEFORE:
         before = pd.to_datetime(BEFORE)
         print(f"Filtered only days before (incl.) {before}")
-        df = df[ pd.to_datetime(df["day"] + " 2025") <= before ]
+        df = df[ pd.to_datetime(df["start"]) <= before ]
     if AFTER:
         after = pd.to_datetime(AFTER)
         print(f"Filtered only days after (incl.) {after}")
-        df = df[ pd.to_datetime(df["day"] + " 2025") >= after ]
+        df = df[ pd.to_datetime(df["start"]) >= after ]
     return df
 
 def calc_alltime_totals(df):
@@ -89,7 +89,7 @@ def ticket_summary(df):
     result = []
     covered_days = df['day'].unique()
     for day in covered_days:
-        ticket_df = df[(df[field_name_project] != "work") & (df[field_name_project] != "TOTALS") & (df[field_name_project] != "LUNCH") & (df[field_name_project] != "BREAKS")]
+        ticket_df = df[(df[field_name_project] != "TOTALS") & (df[field_name_project] != "LUNCH") & (df[field_name_project] != "BREAKS")]
         ticket_df = ticket_df[ticket_df["day"] == day]
 
         ticketkey_pattern = r'[A-Z]+-[0-9]+'
