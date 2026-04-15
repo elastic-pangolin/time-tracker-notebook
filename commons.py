@@ -2,11 +2,13 @@ import os
 import re
 import pandas as pd
 from loguru import logger
-from datetime import datetime
+from datetime import datetime, timezone
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.colors as matcolors
+
+from jira import JIRA
 
 # Definitions: column names in time-tracker csv file
 field_name_project = "Project"
@@ -19,28 +21,27 @@ field_name_description = "Description"
 pd.set_option('display.max_rows', None)
 
 def prep_data(df):
-    raw_df = df.copy()
+    raw_df = df.copy(deep=True)
     raw_df = raw_df[raw_df[field_name_start] != "deleted"]
     raw_df = raw_df.dropna(subset=[field_name_start, field_name_end])
     raw_df[field_name_start] = raw_df[field_name_start].str.replace(r' GMT.*', '', regex=True)
     raw_df[field_name_end] = raw_df[field_name_end].str.replace(r' GMT.*', '', regex=True)
-    raw_df['start'] = pd.to_datetime(raw_df[field_name_start]) #, format='%a %b %d %Y %H:%M:%S')
+    raw_df['start'] = pd.to_datetime(raw_df[field_name_start], errors='coerce') #, format='%a %b %d %Y %H:%M:%S')
     raw_df['end'] = pd.to_datetime(raw_df[field_name_end]) #,format='%a %b %d %Y %H:%M:%S')
     raw_df['day'] = raw_df['start'].dt.strftime('%b %d')
     
     return raw_df
 
-# TODO: why is 2025 hardcoded?
 def time_mask(full_df, BEFORE:str = None, AFTER:str = None):
-    df = full_df.copy()
+    df = full_df.copy(deep=True)
     if BEFORE:
         before = pd.to_datetime(BEFORE)
         print(f"Filtered only days before (incl.) {before}")
-        df = df[ pd.to_datetime(df["day"] + " 2025") <= before ]
+        df = df[ pd.to_datetime(df["start"]) <= before ]
     if AFTER:
         after = pd.to_datetime(AFTER)
         print(f"Filtered only days after (incl.) {after}")
-        df = df[ pd.to_datetime(df["day"] + " 2025") >= after ]
+        df = df[ pd.to_datetime(df["start"]) >= after ]
     return df
 
 def calc_alltime_totals(df):
@@ -71,7 +72,7 @@ def calc_alltime_totals(df):
     return eval_total
 
 def add_daily_totals(og_df):
-    df = og_df.copy()
+    df = og_df.copy(deep=True)
     # calculate totals
     covered_days = df['day'].unique()
     for day in covered_days:
@@ -89,7 +90,7 @@ def ticket_summary(df):
     result = []
     covered_days = df['day'].unique()
     for day in covered_days:
-        ticket_df = df[(df[field_name_project] != "work") & (df[field_name_project] != "TOTALS") & (df[field_name_project] != "LUNCH") & (df[field_name_project] != "BREAKS")]
+        ticket_df = df[(df[field_name_project] != "TOTALS") & (df[field_name_project] != "LUNCH") & (df[field_name_project] != "BREAKS")]
         ticket_df = ticket_df[ticket_df["day"] == day]
 
         ticketkey_pattern = r'[A-Z]+-[0-9]+'
@@ -129,3 +130,30 @@ def ticket_summary(df):
 
         result.append( (day, ticket_agg) )
     return result
+
+def jira_log_time(serveraddr: str, accesstoken: str, issuekey: str, date: datetime.datetime, time_minutes: int, cacert: str = None):
+    jiraoptions = {}
+    jiraoptions["server"] = serveraddr
+    jiraoptions["verify"] = True # always verify the server!
+    if cacert:
+        jiraoptions["verify"] = cacert # only necessary for custom certficate authorities, use full path
+    try:
+        jira = JIRA(options=jiraoptions, token_auth=accesstoken)
+        jira.fields() # list fields from jira as a test
+    except Exception as ex:
+        print("Connection failed!")
+        return False
+    if date.tzinfo is None:
+        # for the endpoint below, dates must always specify timezone. if the info is missing, set UTC
+        date = date.replace(tzinfo=timezone.utc)
+    payload = {
+        "started": date.strftime("%Y-%m-%dT09:00:00.000%z"), #set to some time in the morning
+        "timeSpentSeconds": int(time_minutes*60),
+        "comment":  f"created with time-tracker-notebook on {str(datetime.now())}",
+    }
+    response = jira._session.post(f"{serveraddr}/rest/api/2/issue/{issuekey}/worklog", json=payload)
+    if response.ok:
+        return True
+    print(response.text)
+    return False
+
